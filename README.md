@@ -116,3 +116,8 @@ If the terminal says `mysql` is not recognized, MySQL's `bin` folder is not on y
 **Query tools**: [Query builder](screenshots/query_builder.png) · [SQL console](screenshots/sql_console.png)
 
 </details>
+
+## Contact
+**Tawyabul Islam Tamim**
+
+Email: [tawyabulislamtamim@gmail.com](mailto:tawyabulislamtamim@gmail.com)
