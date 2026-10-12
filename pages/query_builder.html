@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query Builder - 2022 World Cup</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E%E2%9A%BD%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/query.css">
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand" href="/">⚽ World Cup 2022 DB</a>
+        <nav>
+            <a href="/view_tables">View tables</a>
+            <a href="/insert_data_into_tables">Insert data</a>
+            <a href="/query_builder" class="active" aria-current="page">Query builder</a>
+            <a href="/sql_console">SQL console</a>
+        </nav>
+    </header>
+
+    <main class="page">
+        <div class="page-head">
+            <div>
+                <h1>Query Builder</h1>
+                <p class="lede">Choose tables, columns, filters and grouping. The SQL is written for you as you go, so you can see how each choice changes the query.</p>
+            </div>
+            <div class="actions">
+                <select id="examples" aria-label="Load an example query"></select>
+                <button id="reset" type="button" class="btn ghost">Start over</button>
+            </div>
+        </div>
+
+        <div class="builder">
+            <section class="card">
+                <h2><span class="step">1</span> Tables <small>FROM · JOIN</small></h2>
+                <div id="source"></div>
+            </section>
+            <section class="card">
+                <h2><span class="step">2</span> Columns <small>SELECT · GROUP BY</small></h2>
+                <div id="columns"></div>
+            </section>
+            <section class="card">
+                <h2><span class="step">3</span> Filter rows <small>WHERE</small></h2>
+                <div id="filters"></div>
+            </section>
+            <section class="card">
+                <h2><span class="step">4</span> Filter groups <small>HAVING</small></h2>
+                <div id="having"></div>
+            </section>
+            <section class="card">
+                <h2><span class="step">5</span> Sort and page size <small>ORDER BY · LIMIT</small></h2>
+                <div id="sorting"></div>
+            </section>
+        </div>
+
+        <section class="card sql-card">
+            <div class="sql-head">
+                <h2>Generated SQL</h2>
+                <div class="actions">
+                    <button id="copy-sql" type="button" class="btn ghost">Copy SQL</button>
+                    <button id="open-console" type="button" class="btn ghost">Edit in SQL console</button>
+                    <button id="copy-link" type="button" class="btn ghost" title="Copy a link that reopens this exact query">Copy link</button>
+                    <button id="run" type="button" class="btn primary" title="Ctrl+Enter">Run query ▶</button>
+                </div>
+            </div>
+            <pre id="sql" class="sql" aria-live="polite">Loading…</pre>
+        </section>
+
+        <section id="results" aria-live="polite"></section>
+    </main>
+
+    <script src="/js/query_common.js"></script>
+    <script src="/js/query_builder.js"></script>
+</body>
+</html>
